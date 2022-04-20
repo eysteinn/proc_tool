@@ -2,6 +2,8 @@
 
 A little tool to launch sub processes with a command and environmental variables set in a config file.  Gui and command line.
 
+Relies on modules: PyYAML (and tkinter for gui)
+
 ## Getting started
 
 ```
