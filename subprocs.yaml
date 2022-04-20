@@ -1,0 +1,27 @@
+
+# Log to file with timestamp in name.
+# Copies environmental variables and adds whats in 'environ'
+proc_logfile:
+  command: 'printenv'
+  logfile: 'proc1_{datetime:%Y%m%dT%H%M}.txt'
+  environ:
+    - SomeText=this is text
+    - SomeNumber=123
+
+# Log a slow process to file.
+# No shell is created since commands are a list.
+proc_slow:
+  command: ['/usr/bin/bash', '-c', 'echo "Start"; sleep 10s; echo "Finish"']
+  logfile: proc_slow.txt
+
+# Open gui program
+proc_gedit:
+  command: ['/usr/bin/gedit']
+
+# Open gui message with text from environmental variables
+proc_message:
+  command: 'xmessage -buttons $OKTXT:0,"$MAYBETXT":1,Cancel:2 -default Ok -nearmouse "$MSGTXT" -timeout 10'
+  environ:
+    - OKTXT=Okay
+    - MAYBETXT=Not Sure
+    - MSGTXT=This is a message from config file.
