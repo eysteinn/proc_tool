@@ -6,8 +6,6 @@ import os
 from pathlib import Path
 from datetime import datetime
 import argparse
-import tkinter as tk
-from tkinter import ttk
 import yaml
 
 
@@ -50,6 +48,8 @@ def run_proc(config, proc):
 
 def open_gui(config):
     """Opens a gui window."""
+    import tkinter as tk
+    from tkinter import ttk
     root = tk.Tk()
     root.geometry('600x400')
     root.resizable(True, True)
