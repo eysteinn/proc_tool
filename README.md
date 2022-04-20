@@ -4,6 +4,7 @@ A little tool to launch sub processes with a command and environmental variables
 
 ## Getting started
 
+```
 usage: proc_tool.py [-h] [--config CONFIG] [procid [procid ...]]
 
 positional arguments:
@@ -12,13 +13,19 @@ positional arguments:
 optional arguments:
   -h, --help       show this help message and exit
   --config CONFIG  Config file to use, if empty use subprocs.yaml file.
+```
 
 
-Example to execute procid 'proc_logfile': 
-    ./proc_tool.py proc_logfile
+
+Example to execute proc id 'proc_logfile': 
+```
+./proc_tool.py proc_logfile
+```
 
 Leave empty for gui interface:
-    ./proc_tool.py
+```
+./proc_tool.py
+```
 
 
 All proc ids are defined in a yaml config file.
