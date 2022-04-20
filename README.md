@@ -10,7 +10,7 @@ Relies on modules: PyYAML (and tkinter for gui)
 usage: proc_tool.py [-h] [--config CONFIG] [procid [procid ...]]
 
 positional arguments:
-  procid           Proc ids to execute. Use none for gui interface.
+  procid           Proc ids to execute. Leave empty for gui interface.
 
 optional arguments:
   -h, --help       show this help message and exit
