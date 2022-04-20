@@ -95,6 +95,7 @@ def parse_args():
     script_dir = Path(__file__).resolve().parent
 
     parser.add_argument('--config', default=(script_dir / 'subprocs.yaml').resolve(), help='Config file to use, if empty use subprocs.yaml file.')
+    parser.add_argument('-l','--list', action='store_true', help='Lists all proc ids available.')
     parser.add_argument('procid', type=str, nargs='*', help='Proc ids to execute. Use none for gui interface.')
 
     opts = parser.parse_args()
@@ -106,6 +107,9 @@ def main():
     """Parse arguments, load config and execute the correct command."""
     args = parse_args()
     config = load_config(args['config'])
+    if args.get('list'):
+        print('\n'.join(list(config.keys())))
+        exit(0)
     if not args.get('procid'):
         open_gui(config)
     for proc in args['procid']:

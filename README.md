@@ -15,6 +15,7 @@ positional arguments:
 optional arguments:
   -h, --help       show this help message and exit
   --config CONFIG  Config file to use, if empty use subprocs.yaml file.
+  -l, --list       Lists all proc ids available.
 ```
 
 
